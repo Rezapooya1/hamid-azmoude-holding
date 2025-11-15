@@ -3,103 +3,183 @@ Official website of Hamid Azmoude Holding
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holding Hamid Azmoudeh</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>هولدینگ حمید آزموده - املاک و سرمایه‌گذاری</title>
 
-    <!-- آیکون‌ها -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- استایل -->
-    <style>
-        body {
-            background: #000;
-            color: white;
-            font-family: sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .logo {
-            font-size: 40px;
-            margin-top: 20px;
-            color: gold;
-        }
-
-        h1 {
-            font-size: 30px;
-            margin-top: 20px;
-            color: gold;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 30px;
-            color: #ddd;
-        }
-
-        .icons {
-            margin-top: 40px;
-        }
-
-        .icons i {
-            font-size: 40px;
-            margin: 15px;
-            transition: 0.3s;
-        }
-
-        .icons i:hover {
-            transform: scale(1.2);
-        }
-
-        .social i {
-            font-size: 35px;
-            margin: 10px;
-        }
-    </style>
+<style>
+@font-face { font-family: 'IRANSans'; src: url('IRANSans.ttf'); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'IRANSans', sans-serif;
+    background: linear-gradient(180deg, #0b0b0b 0%, #1c1c1c 100%);
+    color: #fff;
+    scroll-behavior: smooth;
+}
+header {
+    width: 100%; padding: 20px 40px;
+    background: rgba(0,0,0,0.9);
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top:0; z-index:100; border-bottom:1px solid #333;
+    transition:0.5s;
+}
+header.scrolled { background: rgba(0,0,0,1); padding:15px 40px; box-shadow:0 2px 10px rgba(0,0,0,0.7); }
+.logo { display:flex; align-items:center; gap:12px; font-size:26px; font-weight:bold; color:#d4af37; transition:0.3s; }
+.logo svg { width:50px; height:50px; fill:#d4af37; transition:0.3s; }
+nav ul { list-style:none; display:flex; gap:30px; transition:0.3s; }
+nav ul li a { text-decoration:none; color:#fff; font-size:16px; position:relative; }
+nav ul li a::after { content:''; position:absolute; width:0%; height:2px; background:#d4af37; left:0; bottom:-4px; transition:0.3s; }
+nav ul li a:hover::after { width:100%; }
+nav ul li a:hover { color:#d4af37; }
+.social-icon img { width:32px; transition:0.3s; }
+.social-icon img:hover { transform:scale(1.2); }
+.contact-box { background: rgba(17,17,17,0.95); padding: 30px 40px; margin-top:30px; display:flex; flex-direction:column; gap:15px; border-top:1px solid #333; }
+.contact-item { display:flex; align-items:center; gap:12px; font-size:18px; opacity:0; transform:translateY(20px); animation:fadeInUp 0.6s forwards; }
+.contact-item img { width:28px; }
+.qr-box { margin-top:25px; text-align:center; opacity:0; transform:translateY(20px); animation:fadeInUp 0.6s forwards 0.4s; }
+.qr-box img { width:160px; transition:0.3s; }
+.qr-box img:hover { transform:scale(1.1); }
+@keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
+@media (max-width:992px) { nav ul { flex-direction:column; gap:15px; background:#111; position:absolute; top:80px; right:0; width:220px; padding:20px; display:none; border-radius:8px; } nav ul.show { display:flex; } .menu-toggle { display:block; cursor:pointer; } }
+@media (max-width:768px) { header { flex-direction:column; align-items:flex-start; gap:15px; } }
+.menu-toggle div { width:30px; height:4px; background:#fff; margin:6px 0; transition:0.4s; }
+.menu-toggle.active div:nth-child(1) { transform: rotate(-45deg) translate(-7px,6px); }
+.menu-toggle.active div:nth-child(2) { opacity:0; }
+.menu-toggle.active div:nth-child(3) { transform: rotate(45deg) translate(-7px,-6px); }
+.section { padding:60px 40px; max-width:1200px; margin:auto; }
+.section h2 { font-size:32px; color:#d4af37; margin-bottom:20px; }
+.section p { font-size:18px; line-height:1.8; color:#eee; }
+.section .highlight { color:#d4af37; font-weight:bold; }
+.foreign-section { background: rgba(255,255,255,0.05); border-radius:12px; padding:30px; margin-top:40px; }
+.gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:20px; margin-top:30px; }
+.gallery img { width:100%; border-radius:12px; transition: transform 0.3s; }
+.gallery img:hover { transform:scale(1.05); }
+.contact-form { margin-top:40px; display:flex; flex-direction:column; gap:15px; }
+.contact-form input, .contact-form textarea { padding:12px; border-radius:8px; border:none; font-size:16px; }
+.contact-form button { background:#d4af37; border:none; padding:14px; border-radius:8px; font-size:18px; cursor:pointer; color:#000; font-weight:bold; transition:0.3s; }
+.contact-form button:hover { background:#c59d2e; }
+.legal { background: rgba(255,255,255,0.05); padding:30px; border-radius:12px; margin-top:40px; font-size:14px; color:#ccc; line-height:1.6; }
+.icon-text { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.icon-text img { width:24px; }
+.map-section { margin-top:40px; border-radius:12px; overflow:hidden; }
+.map-section iframe { width:100%; height:450px; border:0; }
+</style>
 </head>
-
 <body>
 
-    <!-- لوگوی طلایی -->
+<header id="header">
     <div class="logo">
-        <i class="fa-solid fa-crown"></i>
-        <i class="fa-solid fa-building"></i>
-        <i class="fa-solid fa-star"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M32 12 L2 40 H12 V62 H26 V44 H38 V62 H52 V40 H62 Z"/></svg>
+        هولدینگ حمید آزموده
     </div>
 
-    <h1>Holding Hamid Azmoudeh</h1>
-
-    <p>
-        ساخت و سرمایه‌گذاری در پروژه‌های لوکس  
-        <br>
-        کیفیت، اعتماد، اعتبار — هویت هلدینگ شما
-    </p>
-
-    <!-- آیکون‌های تزئینی -->
-    <div class="icons">
-        <i class="fa-solid fa-crown" style="color: gold;"></i>
-        <i class="fa-solid fa-star" style="color: gold;"></i>
-        <i class="fa-solid fa-diamond" style="color: white;"></i>
-        <i class="fa-solid fa-landmark" style="color: #ccc;"></i>
-        <i class="fa-solid fa-city" style="color: #aaa;"></i>
+    <div class="menu-toggle" onclick="toggleMenu(this)">
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
 
-    <h2 style="margin-top:40px; color:gold;">ارتباط با ما</h2>
+    <nav>
+        <ul id="menu">
+            <li><a href="#home">خانه</a></li>
+            <li><a href="#services">خدمات</a></li>
+            <li><a href="#projects">پروژه‌ها</a></li>
+            <li><a href="#about">درباره ما</a></li>
+            <li><a href="#gallery">گالری</a></li>
+            <li><a href="#contact">تماس</a></li>
+            <li><a href="#foreign">برای خارجی‌ها</a></li>
+            <li><a href="#map">نقشه شمال ایران</a></li>
+        </ul>
+    </nav>
 
-    <div class="social">
-        <a href="#" style="text-decoration:none; color:white;">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
+    <a class="social-icon" href="https://instagram.com/hamidazmoudeh.holding" target="_blank">
+        <img src="instagram-icon.png" alt="اینستاگرام" />
+    </a>
+</header>
 
-        <a href="tel:+98000000000" style="text-decoration:none; color:white;">
-            <i class="fa-solid fa-phone"></i>
-        </a>
+<section id="home" class="section">
+    <h2>خوش آمدید به هولدینگ حمید آزموده</h2>
+    <p>ما به عنوان یک <span class="highlight">هولدینگ املاک و سرمایه‌گذاری</span> معتبر، پروژه‌های لوکس و حرفه‌ای را در سراسر ایران ارائه می‌دهیم. تمرکز اصلی ما در <span class="highlight">شمال ایران</span> است اما با افتخار پروژه‌ها را در کل ایران می‌پذیریم. از خانه‌های مدرن تا ویلاهای ساحلی، ما همراه شما در تحقق رویای ملکی شما هستیم.</p>
+</section>
 
-        <a href="#" style="text-decoration:none; color:white;">
-            <i class="fa-solid fa-location-dot"></i>
-        </a>
+<section id="services" class="section">
+    <h2>خدمات ما</h2>
+    <div class="icon-text"><img src="icon1.png" alt="خرید و فروش"/><span>خرید و فروش املاک</span></div>
+    <div class="icon-text"><img src="icon2.png" alt="سرمایه گذاری"/><span>مشاوره سرمایه‌گذاری</span></div>
+    <div class="icon-text"><img src="icon3.png" alt="مدیریت پروژه"/><span>مدیریت پروژه‌های تجاری و مسکونی</span></div>
+    <div class="icon-text"><img src="icon4.png" alt="بازاریابی"/><span>بازاریابی حرفه‌ای ملک</span></div>
+    <div class="icon-text"><img src="icon5.png" alt="اجاره"/><span>اجاره کوتاه‌مدت و بلندمدت</span></div>
+</section>
+
+<section id="projects" class="section">
+    <h2>پروژه‌های ما</h2>
+    <p>از ویلاهای ساحلی خزر تا برج‌های لوکس تهران، تمامی پروژه‌های ما با کیفیت بالا، طراحی مدرن و ارزش سرمایه‌گذاری بالا ارائه می‌شوند. ما افتخار داریم با توجه به نیاز شما، بهترین گزینه‌ها را ارائه کنیم.</p>
+</section>
+
+<section id="gallery" class="section">
+    <h2>گالری تصاویر پروژه‌ها</h2>
+    <div class="gallery">
+        <img src="project1.jpg" alt="پروژه 1">
+        <img src="project2.jpg" alt="پروژه 2">
+        <img src="project3.jpg" alt="پروژه 3">
+        <img src="project4.jpg" alt="پروژه 4">
     </div>
+</section>
+
+<section id="about" class="section">
+    <h2>درباره ما</h2>
+    <p>هولدینگ حمید آزموده با بیش از ۱۰ سال سابقه در حوزه املاک و سرمایه‌گذاری، با تیم حرفه‌ای و متعهد خود، به مشتریان خود اطمینان می‌دهد که هر پروژه با استانداردهای بین‌المللی و شفافیت کامل انجام می‌شود.</p>
+    <p>دعوت به همکاری: اگر به دنبال فرصت‌های شغلی یا همکاری با هولدینگ هستید، خوشحال می‌شویم تیم شما را در کنار خود داشته باشیم.</p>
+</section>
+
+<section id="foreign" class="section foreign-section">
+    <h2>Foreign Clients</h2>
+    <p>Welcome to Hamid Azmoudeh Holding, specialized in luxury real estate across Iran. Our focus is the North of Iran, but we accept projects nationwide. Whether you are looking for investment opportunities or properties to buy, our team ensures professional guidance and support. Contact us for personalized services.</p>
+</section>
+
+<section id="map" class="map-section">
+    <h2>نقشه فعالیت شمال ایران</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100000!2d50.0000!3d36.0000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f6b1b0e7e2f3cbb%3A0x123456789abcdef!2sNorth%20Iran!5e0!3m2!1sen!2sir!4v0000000000" allowfullscreen></iframe>
+</section>
+
+<section id="contact" class="section">
+    <h2>راه‌های ارتباطی</h2>
+    <div class="contact-box">
+        <div class="contact-item" style="animation-delay:0s"><img src="phone-icon.png" alt="تلفن"/> 09021778119</div>
+        <div class="contact-item" style="animation-delay:0.2s"><img src="phone-icon.png" alt="تلفن"/> 09125906885</div>
+        <div class="contact-item" style="animation-delay:0.4s"><img src="phone-icon.png" alt="تلفن"/> 09116374314</div>
+        <div class="contact-item" style="animation-delay:0.6s"><img src="email-icon.png" alt="ایمیل"/> hamidazmodehholding@gmail.com</div>
+        <div class="qr-box">
+            <p>ورود سریع به پیج اینستاگرام</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://instagram.com/hamidazmoudeh.holding" alt="QR Instagram" />
+        </div>
+
+        <form class="contact-form">
+            <input type="text" placeholder="نام شما" required />
+            <input type="email" placeholder="ایمیل شما" required />
+            <textarea placeholder="پیام شما" rows="5" required></textarea>
+            <button type="submit">ارسال پیام</button>
+        </form>
+    </div>
+</section>
+
+<section class="legal section">
+    <h2>اطلاعات قانونی و اعتمادسازی</h2>
+    <p>هولدینگ حمید آزموده دارای مجوز رسمی فعالیت در حوزه املاک و مستغلات است. تمامی قراردادها با رعایت قوانین جمهوری اسلامی ایران و استانداردهای بین‌المللی تنظیم می‌شوند. اطلاعات مشتریان محرمانه و محفوظ است و هرگونه همکاری با ما شفاف و قانونی خواهد بود.</p>
+    <p>شماره ثبت شرکت: 123456789 | نماد اعتماد الکترونیک: XXXXXX | مجوز صنفی املاک: YYYYYY</p>
+</section>
+
+<script>
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 50) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+});
+function toggleMenu(menu) {
+    document.getElementById('menu').classList.toggle('show');
+    menu.classList.toggle('active');
+}
+</script>
 
 </body>
 </html>
